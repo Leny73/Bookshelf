@@ -1,0 +1,83 @@
+{
+ "metadata": {
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5-final"
+  },
+  "orig_nbformat": 2,
+  "kernelspec": {
+   "name": "python38564bit4a10657e4b8348298fa9df3364f51ee3",
+   "display_name": "Python 3.8.5 64-bit",
+   "language": "python"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2,
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Import all dependencies\n",
+    "import unittest\n",
+    "import json\n",
+    "from __init__ import create_app\n",
+    "from models import setup_db"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class ResourceTestCase(unittest.TestCase):\n",
+    "    \"\"\"This class represents the resource test case\"\"\"\n",
+    "\n",
+    "    def setUp(self):\n",
+    "        \"\"\"Define test variables and initialize app.\"\"\"\n",
+    "        self.app = create_app()\n",
+    "        self.client = self.app.test_client\n",
+    "        self.database_name = \"test_db\"\n",
+    "        self.database_path = \"postgres://{}:{}@{}/{}\".format('lyuben', 'temp123!','localhost:5432', self.database_name)\n",
+    "        setup_db(self.app, self.database_path)\n",
+    "    \n",
+    "        self.new_book = {\n",
+    "            'title': 'Time and Power',\n",
+    "            'author': 'Petar Deunov',\n",
+    "            'rating': 5\n",
+    "        }\n",
+    "    def tearDown(self):\n",
+    "        \"\"\"Executed after each test\"\"\"\n",
+    "        pass\n",
+    "\n",
+    "    def test_given_behavior(self):\n",
+    "        \"\"\"Test _____________ \"\"\"\n",
+    "        res = self.client().get('/')\n",
+    "\n",
+    "        self.assertEqual(res.status_code, 200)\n",
+    "    \n",
+    "# Make the tests conveniently executable\n",
+    "if __name__ == \"__init__\":\n",
+    "    unittest.main()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ]
+}
