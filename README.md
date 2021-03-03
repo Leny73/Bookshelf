@@ -46,7 +46,7 @@ The API will retern three error types when requests fail:
 </section> 
 
 ## Endpoints
-GET /books
+### GET /books
 - Returns a list of book objects, value of success and a total number of books
 - Results are paginated in groups of 8. Include a request argument to choose page number, starting from 1.
 * Sample : In terminal with curl installe type: <code>curl http://127.0.0.1:5000/books</code>
@@ -75,7 +75,8 @@ GET /books
   "total": 3
 }
 </code>
-POST /books
+
+### POST /books
 - Creates a new book using the submitted title, author and rating. Return the id of the created book, success value, total vooks and book list based on current page number to update.
 * Example: <code> curl http://127.0.0.1:5000 -X POST -H "Content-Type: application/json" -d '{"title":"Masons", "author":"Jean Palu", "rating":"5"}'</code>
 * Example response: <code> {
@@ -110,7 +111,7 @@ POST /books
   "total_books": 4
 }
 </code>
-DELETE /books/{book_id}
+### DELETE /books/{book_id}
 - Deletes a selected book id. Returns books, success value, total length and deleted id.
 * Example: <code> curl -X DELETE http://127.0.0.1:5000/books/6</code>
 * Example Response: <code> {
@@ -139,7 +140,7 @@ DELETE /books/{book_id}
   "total_books": 3
 }
 </code>
-PATCH /books/{book_id}
+### PATCH /books/{book_id}
 - If provided, updates rating of the specific book_id. Return success value and id of the updated Book.
 * Example: <code> curl -X PATCH http://127.0.0.1:5000/books/5 -H "Content-Type: application/json" -d '{"rating":"11"}'
 * Example Response: <code> {
