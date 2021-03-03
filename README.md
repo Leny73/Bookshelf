@@ -111,6 +111,7 @@ The API will retern three error types when requests fail:
   "total_books": 4
 }
 </code>
+
 ### DELETE /books/{book_id}
 - Deletes a selected book id. Returns books, success value, total length and deleted id.
 * Example: <code> curl -X DELETE http://127.0.0.1:5000/books/6</code>
@@ -140,6 +141,7 @@ The API will retern three error types when requests fail:
   "total_books": 3
 }
 </code>
+
 ### PATCH /books/{book_id}
 - If provided, updates rating of the specific book_id. Return success value and id of the updated Book.
 * Example: <code> curl -X PATCH http://127.0.0.1:5000/books/5 -H "Content-Type: application/json" -d '{"rating":"11"}'
