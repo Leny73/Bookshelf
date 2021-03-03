@@ -23,7 +23,7 @@ on port http://127.0.0.1:5000/ and see a message in the terminal:
  * Debugger PIN: 473-405-251<br>
 </section>
 This version of the application does not contain any Authentication.
-
+# Api Reference
 ## Error Handling
 Errors are returned as JSON objects in the following format: 
 <code>
@@ -43,7 +43,10 @@ The API will retern three error types when requests fail:
 </section> 
 
 ## Endpoints
-TODO : expose all existing ednpoints to README
+Get /books
+- Returns a list of book objects, value of success and a total number of books
+- Results are paginated in groups of 8. Include a request argument to choose page number, starting from 1.
+* Sample : <code>curl http://127.0.0.1:5000/books</code>
 
 
 
