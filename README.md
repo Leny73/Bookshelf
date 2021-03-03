@@ -76,10 +76,9 @@ GET /books
 }
 </code>
 POST /books
-- General:
- - Creates a new book using the submitted title, author and rating. Return the id of the created book, success value, total vooks and book list based on current page number to update.
- - Example: <code> curl http://127.0.0.1:5000 -X POST -H "Content-Type: application/json" -d '{"title":"Masons", "author":"Jean Palu", "rating":"5"}'</code>
- - Example response: <code> {
+- Creates a new book using the submitted title, author and rating. Return the id of the created book, success value, total vooks and book list based on current page number to update.
+* Example: <code> curl http://127.0.0.1:5000 -X POST -H "Content-Type: application/json" -d '{"title":"Masons", "author":"Jean Palu", "rating":"5"}'</code>
+* Example response: <code> {
   "books": [
     {
       "author": "Petar Deunov", 
@@ -112,10 +111,9 @@ POST /books
 }
 </code>
 DELETE /books/{book_id}
-- General:
- - Deletes a selected book id. Returns books, success value, total length and deleted id.
- - Example: <code> curl -X DELETE http://127.0.0.1:5000/books/6</code>
- - Example Response: <code> {
+- Deletes a selected book id. Returns books, success value, total length and deleted id.
+* Example: <code> curl -X DELETE http://127.0.0.1:5000/books/6</code>
+* Example Response: <code> {
   "books": [
     {
       "author": "Petar Deunov", 
@@ -142,15 +140,12 @@ DELETE /books/{book_id}
 }
 </code>
 PATCH /books/{book_id}
-
-- General:
- - If provided, updates rating of the specific book_id. Return success value and id of the updated Book.
- - Example: <code> curl -X PATCH http://127.0.0.1:5000/books/5 -H "Content-Type: application/json" -d '{"rating":"11"}'
- - Example Response: <code> {
+- If provided, updates rating of the specific book_id. Return success value and id of the updated Book.
+* Example: <code> curl -X PATCH http://127.0.0.1:5000/books/5 -H "Content-Type: application/json" -d '{"rating":"11"}'
+* Example Response: <code> {
   "id": 5, 
   "success": true
-}
-  </code>
+}</code>
 
 
 
